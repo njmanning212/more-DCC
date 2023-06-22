@@ -141,6 +141,24 @@ Their ratios are 2/5 (0.400000), 2/5 (0.400000), and 1/5 (0.200000).
 -----------------------------------------------------------------------------*/
 // Your solution for 04- here:
 
+function plusMinus (arr) {
+  let pos = 0
+  let neg = 0
+  let zero = 0
+  arr.forEach(element => {
+    if (element > 0) {
+      pos++
+    } else if (element < 0) {
+      neg++
+    } else {
+      zero++
+    }
+  })
+  let posRatio = (pos/arr.length).toFixed(6)
+  let negRatio = (neg/arr.length).toFixed(6)
+  let zeroRatio = (zero/arr.length).toFixed(6)
+  return [posRatio, negRatio, zeroRatio]
+}
 
 
 /*-----------------------------------------------------------------------------
