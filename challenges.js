@@ -19,6 +19,25 @@ twoSum([8,7], 16) //=> 'No Sum'
 -----------------------------------------------------------------------------*/
 // Your solution for 01- here:
 
+function twoSum (arr, target) {
+  let result = []
+  arr.forEach((element1, idx1) => {
+    arr.forEach((element2, idx2) => {
+      if ((element1 + element2) === target && idx1 !== idx2) {
+        if (!result.includes(idx1)) {
+          result.push(idx1)
+        }
+        if (!result.includes(idx2)) {
+          result.push(idx2)
+        }
+      }
+    })
+  })
+  if (result.length === 0) {
+    return "No Sum"
+  }
+  return result
+}
 
 
 /*-----------------------------------------------------------------------------
@@ -83,6 +102,9 @@ diagonalDifference([[11,2,4], [4,5,6], [10,8,-12]]) // => 15
 -----------------------------------------------------------------------------*/
 // Your solution for 03- here:
 
+function diagonalDifference(arr) {
+
+}
 
 
 /*-----------------------------------------------------------------------------
@@ -143,7 +165,6 @@ staircase(6) // =>
 ]
 -----------------------------------------------------------------------------*/
 // Your solution for 05- here:
-
 
 /*-----------------------------------------------------------------------------
 Challenge: 06 - miniMaxSum
@@ -272,7 +293,6 @@ breakingRecords([10,5,20,20,4,5,2,25,1]) //=> [2,4]
 breakingRecords([3,4,21,36,10,28,35,5,24,42]) //=> [4,0]
 -----------------------------------------------------------------------------*/
 // Your solution for 10- here:
-
 
 
 /*-----------------------------------------------------------------------------
@@ -415,7 +435,6 @@ toCamelCase( 'A_b_c' ) // => 'ABC'
 // Your solution for 15-toCamelCase here:
 
 
-
 /*-----------------------------------------------------------------------------
 Challenge: 16-countTheBits
 
@@ -442,6 +461,15 @@ countTheBits( 65535 ) //=> 16
 -----------------------------------------------------------------------------*/
 // Your solution for 16-countTheBits here:
 
+// function countTheBits(num) {
+//   let binary = num.toString(2)
+//   let count = 0
+
+//   for (i = 0; i< num.length; i++) {
+//     if num[i] = 1
+//     count++
+//   }
+// }
 
 
 /*-----------------------------------------------------------------------------
