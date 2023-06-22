@@ -74,7 +74,18 @@ compareTriplets([17, 28, 30], [99, 16, 8]) //=> [2, 1]
 -----------------------------------------------------------------------------*/
 // Your solution for 02- here:
 
-
+function compareTriplets (arr1, arr2) {
+  result = [0, 0]
+  for (i = 0; i < arr1.length; i++) {
+    if (arr1[i] > arr2[i]) {
+      result[0] += 1
+    } 
+    if (arr2[i] > arr1[i]) {
+      result[1] += 1
+    } 
+  }
+  return result
+}
 
 /*-----------------------------------------------------------------------------
 
