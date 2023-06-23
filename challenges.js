@@ -393,6 +393,22 @@ breakingRecords([3,4,21,36,10,28,35,5,24,42]) //=> [4,0]
 -----------------------------------------------------------------------------*/
 // Your solution for 10- here:
 
+function breakingRecords (arr) {
+  let highScore = arr[0]
+  let lowScore = arr[0]
+  let newHigh = 0
+  let newLow = 0
+  arr.forEach(score => {
+    if (score > highScore) {
+      newHigh++
+      highScore = score
+    } else if (score < lowScore) {
+      newLow++
+      lowScore = score
+    }
+  })
+  return [newHigh, newLow]
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 11-flatten
