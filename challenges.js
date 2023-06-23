@@ -256,6 +256,21 @@ timeConversion('07:05:45PM') //=> '19:05:45'
 -----------------------------------------------------------------------------*/
 // Your solution for 07- here:
 
+function timeConversion (str) {
+  let hourStr = str.slice(0, 8)
+  let minSecStr = str.slice(2, 8)
+  let hourNum = parseInt(str.substring(0,2))
+  let AMPM = str.substring(8, 10)
+  if (hourNum === 12 && AMPM === 'AM') {
+    let newHourNum = '00'
+    hourStr = newHourNum + minSecStr
+  }
+  if (AMPM === "PM") {
+    let newHourNum = (hourNum + 12).toString()
+    hourStr = newHourNum + minSecStr
+  }
+  return hourStr
+}
 
 
 /*-----------------------------------------------------------------------------
