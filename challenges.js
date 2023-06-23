@@ -442,6 +442,17 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------------------*/
 // Your solution for 11-flatten here:
 
+function flatten (arr) {
+  let result = []
+  arr.forEach(element => {
+    if (typeof element === 'object') {
+      result = [...result, ...flatten(element)]
+    } else {
+      result.push(element)
+    }
+  })
+  return result
+}
 
 
 /*-----------------------------------------------------------------------------
