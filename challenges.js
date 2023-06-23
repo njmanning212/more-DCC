@@ -342,6 +342,28 @@ of the first kangaroo, the first kangaroo will never be able to catch up. Thus, 
 -----------------------------------------------------------------------------*/
 // Your solution for 09- here:
 
+function kangaroo (x1, v1, x2, v2) {
+  if ( (x1 < x2 && v1 < v2) || (x1 > x2 && v1 > v2) || (x1 !== x2 && v1 === v2)) {
+    return "NO"
+  }
+  if (x1 === x2) {
+    return "YES"
+  }
+  let aheadKangaroo = x1 > x2 ? x1 : x2
+  let aheadVelocity = aheadKangaroo === x1? v1 : v2
+  let behindKangaroo = aheadKangaroo === x1? x2: x1
+  let behindVelocity = aheadVelocity === v1? v2 : v1
+
+  while (behindKangaroo <= aheadKangaroo) {
+    aheadKangaroo = aheadKangaroo + aheadVelocity
+    behindKangaroo = behindKangaroo + behindVelocity
+    if (behindKangaroo === aheadKangaroo) {
+      return "YES"
+    } else if (behindKangaroo > aheadKangaroo) {
+      return "NO"
+    }
+  }
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 10 - breakingRecords
