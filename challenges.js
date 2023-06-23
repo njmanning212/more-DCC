@@ -272,7 +272,6 @@ function timeConversion (str) {
   return hourStr
 }
 
-
 /*-----------------------------------------------------------------------------
 Challenge: 08 - gradingStudents
 
@@ -298,6 +297,18 @@ gradingStudents([73,67,38,33]) //=> [75,67,40,33]
 -----------------------------------------------------------------------------*/
 // Your solution for 08- here:
 
+function gradingStudents (arr) {
+  let adjustedGrades = arr.map (grade => {
+    if (grade < 35 || (grade % 5) < 3) {
+      return grade
+    } else {
+      let adjustment = 5 - (grade % 5)
+      let roundedGrade = grade + adjustment
+      return roundedGrade
+    }
+  })
+  return adjustedGrades
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 09 - kangaroo
