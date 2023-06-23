@@ -197,6 +197,16 @@ staircase(6) // =>
 -----------------------------------------------------------------------------*/
 // Your solution for 05- here:
 
+function staircase (num) {
+  let arr = []
+  let space = ' '
+  let step = '#'
+  for (let i = 0; i < num; i++) {
+    arr[i] = (space.repeat(num - i - 1) + step.repeat(i + 1))
+  }
+  return arr
+}
+
 /*-----------------------------------------------------------------------------
 Challenge: 06 - miniMaxSum
 
@@ -214,6 +224,16 @@ miniMaxSum([1,2,3,4,5]) //=> [10,14]
 -----------------------------------------------------------------------------*/
 // Your solution for 06- here:
 
+function miniMaxSum (arr) {
+  let result = [0, 0]
+  let sum = 0 
+  arr.forEach(element => {
+    sum += element
+  })
+  result[0] = sum - Math.max(...arr)
+  result[1] = sum - Math.min(...arr)
+  return result
+}
 
 
 /*-----------------------------------------------------------------------------
