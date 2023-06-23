@@ -477,6 +477,22 @@ balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------------------*/
 // Your solution for 12-balancedBrackets here:
 
+function balancedBrackets (str) {
+  let stack = []
+  let openBrackets = ['(', '[', '{']
+  let closeBrackets = [')', ']', '}']
+  for (let i = 0; i < str.length; i++) {
+    if (openBrackets.includes(str[i])) {
+      stack.push(str[i])
+    } else if (closeBrackets.includes(str[i])) {
+      let openBracket = stack.pop()
+      if (openBrackets.indexOf(openBracket) !== closeBrackets.indexOf(str[i])) {
+        return false
+      }
+    }
+  }
+  return stack.length === 0
+}
 
 
 /*-----------------------------------------------------------------------------
