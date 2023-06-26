@@ -521,6 +521,27 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------------------*/
 // Your solution for 13-isWinningTicket here:
 
+function isWinningTicket(tickets) {
+  for (let ticket of tickets) {
+    let str = ticket[0]
+    let codeToMatch = ticket[1]
+
+    let isWinning = false
+
+    for (let i = 0; i < str.length; i++) {
+      if (str.charCodeAt(i) === codeToMatch) {
+        isWinning = true;
+        break
+      }
+    }
+
+    if (!isWinning) {
+      return false
+    }
+  }
+
+  return true
+}
 
 
 /*-----------------------------------------------------------------------------
