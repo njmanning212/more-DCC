@@ -570,7 +570,14 @@ getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------------------*/
 // Your solution for 14-getNumForIP here:
 
-
+function getNumForIP (str) {
+  let arr = str.split('.')
+  let sum = 0
+  for (i = 0; i < arr.length; i++) {
+    sum += (arr[i] * (256 ** (arr.length - i - 1)))
+  }
+  return sum
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 15-toCamelCase
