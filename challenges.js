@@ -604,6 +604,22 @@ toCamelCase( 'A_b_c' ) // => 'ABC'
 -----------------------------------------------------------------------------*/
 // Your solution for 15-toCamelCase here:
 
+function toCamelCase (str) {
+  console.log(str)
+  let arr = str.split(/[-_]/)
+  console.log(arr)
+  let newStr = arr[0] 
+  console.log(newStr)
+  for (let i = 1; i < arr.length; i++) {
+    console.log(arr[i][0])
+    let capitalizedLetter = arr[i][0].toUpperCase()
+    console.log(capitalizedLetter)
+    let restOfWord = arr[i].slice(1)
+    console.log(restOfWord)
+    newStr += capitalizedLetter + restOfWord
+  }
+  return newStr
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 16-countTheBits
