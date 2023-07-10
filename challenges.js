@@ -643,7 +643,6 @@ countTheBits( 65535 ) //=> 16
 
 function countTheBits (int) {
   let binary = int.toString(2).split('')
-  
   let sum = 0 
   binary.forEach(element => {
     sum += parseInt(element)
@@ -677,6 +676,23 @@ gridTrip( [100, -22], 'L2L15D50U1D9') //=> [83, -80]
 -----------------------------------------------------------------------------*/
 // Your solution for 17-gridTrip here:
 
+function gridTrip (arr, str) {
+  let xAxis = arr[0]
+  let yAxis = arr[1]
+  let commands = str.match(/[A-Z]\d+/g)
+  commands.forEach(command => {
+    if (command[0] === "D") {
+      yAxis -= parseInt(command.substring(1,3))
+    } else if (command[0] === 'U') {
+      yAxis += parseInt(command.substring(1,3))
+    } else if (command[0] === 'R') {
+      xAxis += parseInt(command.substring(1,3))
+    } else if (command[0] === 'L') {
+      xAxis -= parseInt(command.substring(1,3))
+    }
+  })
+  return [xAxis, yAxis]
+}
 
 
 /*-----------------------------------------------------------------------------
