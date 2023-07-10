@@ -641,15 +641,15 @@ countTheBits( 65535 ) //=> 16
 -----------------------------------------------------------------------------*/
 // Your solution for 16-countTheBits here:
 
-// function countTheBits(num) {
-//   let binary = num.toString(2)
-//   let count = 0
-
-//   for (i = 0; i< num.length; i++) {
-//     if num[i] = 1
-//     count++
-//   }
-// }
+function countTheBits (int) {
+  let binary = int.toString(2).split('')
+  
+  let sum = 0 
+  binary.forEach(element => {
+    sum += parseInt(element)
+  })
+  return sum
+}
 
 
 /*-----------------------------------------------------------------------------
