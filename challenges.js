@@ -721,7 +721,21 @@ addChecker( [10, 15, 16, 22], 19 ) // => false
 -----------------------------------------------------------------------------*/
 // Your solution for 18-addChecker here:
 
-
+function addChecker (arr, int) {
+  for (let i = 0; i < arr.length; i++) {
+    let num1 = arr[i]
+    for (let j = i + 1; j < arr.length; j++) {
+      let num2 = arr[j]
+      if (num1 + num2 === int) {
+        return true
+      }
+      if (num1 + num2 > int) {
+        return false
+      }
+    }
+  }
+  return false
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 19-Snail
