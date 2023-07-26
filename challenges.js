@@ -763,6 +763,26 @@ snail(array) //=> [1,2,3,4,5,6,7,8,9]
 -----------------------------------------------------------------------------*/
 // Your solution for 19- here:
 
+function snail (arr) {
+  let newArr = []
+  while (arr.length > 0) {
+    newArr.push(...arr.shift())
+
+    for (let i = 0; i < arr.length; i++) {
+      newArr.push(arr[i].pop())
+    }
+
+    if (arr.length > 0) {
+      newArr.push(...(arr.pop().reverse()))
+    }
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+      newArr.push(arr[i].shift())
+    }
+  }
+  return newArr
+}
+
 
 /*-----------------------------------------------------------------------------
 Challenge: 20-totalTaskTime
